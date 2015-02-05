@@ -1,0 +1,300 @@
+command /tm [<text>] [<text>]:
+	trigger:
+		if arg 1 is not set:
+			if player have permissions "tm.admin":
+				send "&8[&c+&8]&cLista komend &6Turbo&cMine&8[&c+&8]" to the player
+				send "&c/tm event = &fDaje kupon na &6Turbo&cMine" to the player
+				send "&c/tm sponsor = &fKupno &6Turbo&cMine &fdla wszystkich graczy" to the player
+				send "&c/tm kup = &fKupno &6Turbo&cMine" to the player
+				send "&c/tm oferty = &fLista ofert &6Turbo&cMine" to the player
+				send "&c/tm wykorzystaj = &fZuzywa kupon na &6Turbo&cMine"
+				send "&8[&c+&8]&cLista komend &6Turbo&cMine&8[&c+&8]" to the player
+			if player don't have permissions "tm.admin":
+				send "&8[&c+&8]&cLista komend &6Turbo&cMine&8[&c+&8]" to the player
+				send "&c/tm kup = &fKupno &6Turbo&cMine" to the player
+				send "&c/tm wykorzystaj = &fZuzywa zeton na &6Turbo&cMine = 2Minuty" to the player
+				send "&c/tm oferty = &fLista ofert &6Turbo&cMine" to the player
+				send "&8[&c+&8]&cLista komend &6Turbo&cMine&8[&c+&8]" to the player
+		if arg 1 is "oferty":
+			if player don't have permissions "tm.vip":
+				if player don't have permissions "tm.svip":
+					send "&8[&c+&8]&cLista ofert &6Turbo&cMine&8[&c+&8]" to the player
+					send "&c/tm kup 1 = &f15Sekund = 7 Extra Waluty" to the player
+					send "&c/tm kup 2 = &f30Sekund = 13 Extra Waluty" to the player
+					send "&c/tm kup 3 = &f45Sekund = 21 Extra Waluty" to the player
+					send "&c/tm kup 4 = &f60Sekund = 29 Extra Waluty" to the player
+					send "&c/tm kup 5 = &f1:15minut = 37 Extra Waluty" to the player
+					send "&c/tm kup 6 = &f1:30Minut = 45 Extra Waluty" to the player
+					send "&c/tm kup 7 = &f1:45Minut = 53 Extra Waluty" to the player
+					send "&c/tm kup 8 = &f2:00Minut = 59 Extra Waluty" to the player
+					send "&8[&c+&8]&cLista ofert &6Turbo&cMine&8[&c+&8]" to the player
+			if player have permissions "tm.vip":
+				if player don't have permissions "tm.svip":
+					send "&8[&c+&8]&cLista ofert &6Turbo&cMine&8[&c+&8]" to the player
+					send "&c/tm kup 1 = &f15Sekund = 6 Extra Waluty" to the player
+					send "&c/tm kup 2 = &f30Sekund = 12 Extra Waluty" to the player
+					send "&c/tm kup 3 = &f45Sekund = 20 Extra Waluty" to the player
+					send "&c/tm kup 4 = &f60Sekund = 28 Extra Waluty" to the player
+					send "&c/tm kup 5 = &f1:15minut = 36 Extra Waluty" to the player
+					send "&c/tm kup 6 = &f1:30Minut = 44 Extra Waluty" to the player
+					send "&c/tm kup 7 = &f1:45Minut = 52 Extra Waluty" to the player
+					send "&c/tm kup 8 = &f2:00Minut = 58 Extra Waluty" to the player
+			if player have permissions "tm.svip":
+				send "&8[&c+&8]&cLista ofert &6Turbo&cMine&8[&c+&8]" to the player
+				send "&c/tm kup 1 = &f15Sekund = 5 Extra Waluty" to the player
+				send "&c/tm kup 2 = &f30Sekund = 11 Extra Waluty" to the player
+				send "&c/tm kup 3 = &f45Sekund = 19 Extra Waluty" to the player
+				send "&c/tm kup 4 = &f60Sekund = 27 Extra Waluty" to the player
+				send "&c/tm kup 5 = &f1:15minut = 35 Extra Waluty" to the player
+				send "&c/tm kup 6 = &f1:30Minut = 43 Extra Waluty" to the player
+				send "&c/tm kup 7 = &f1:45Minut = 51 Extra Waluty" to the player
+				send "&c/tm kup 8 = &f2:00Minut = 57 Extra Waluty" to the player
+				send "&8[&c+&8]&cLista ofert &6Turbo&cMine&8[&c+&8]" to the player
+		if arg 1 is "kup":
+			if arg 2 is not set:
+				send "Wpisz /tm oferty aby uzyskac oferty &6Turbo&cMine" to the player
+		if arg 1 is "kup":
+			if arg 2 is "1":
+				if player don't have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 7 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 7 Sponge named "&d&lExtra Waluta":
+							remove 7 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 15 seconds
+							broadcast "&a%player% &fZakupil &6&lTurbo&c&lMine &fna 15 Sekund!"
+				if player have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 6 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 6 Sponge named "&d&lExtra Waluta":
+							remove 6 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 15 seconds
+							broadcast "&a[VIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 15 Sekund!"
+				if player have permissions "tm.svip":
+					if player don't have 5 Sponge named "&d&lExtra Waluta":
+						send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+					if player have 5 Sponge named "&d&lExtra Waluta":
+						remove 5 Sponge named "&d&lExtra Waluta" from the player
+						apply haste to player for 15 seconds
+						broadcast "&a[SVIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 15 Sekund!"
+		if arg 1 is "kup":
+			if arg 2 is "2":
+				if player don't have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 13 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 13 Sponge named "&d&lExtra Waluta":
+							remove 13 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 30 seconds
+							broadcast "&a%player% &fZakupil &6&lTurbo&c&lMine &fna 30 Sekund!"
+				if player have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 12 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 12 Sponge named "&d&lExtra Waluta":
+							remove 12 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 30 seconds
+							broadcast "&a[VIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 30 Sekund!"
+				if player have permissions "tm.svip":
+					if player don't have 11 Sponge named "&d&lExtra Waluta":
+						send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+					if player have 11 Sponge named "&d&lExtra Waluta":
+						remove 11 Sponge named "&d&lExtra Waluta" from the player
+						apply haste to player for 30 seconds
+						broadcast "&a[SVIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 30 Sekund!"
+		if arg 1 is "kup":
+			if arg 2 is "3":
+				if player don't have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 21 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 21 Sponge named "&d&lExtra Waluta":
+							remove 21 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 45 seconds
+							broadcast "&a%player% &fZakupil &6&lTurbo&c&lMine &fna 45 Sekund!"
+				if player have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 20 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 20 Sponge named "&d&lExtra Waluta":
+							remove 20 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 45 seconds
+							broadcast "&a[VIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 45 Sekund!"
+				if player have permissions "tm.svip":
+					if player don't have 19 Sponge named "&d&lExtra Waluta":
+						send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+					if player have 19 Sponge named "&d&lExtra Waluta":
+						remove 19 Sponge named "&d&lExtra Waluta" from the player
+						apply haste to player for 45 seconds
+						broadcast "&a[SVIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 45 Sekund!"
+		if arg 1 is "kup":
+			if arg 2 is "4":
+				if player don't have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 29 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 29 Sponge named "&d&lExtra Waluta":
+							remove 29 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 60 seconds
+							broadcast "&a%player% &fZakupil &6&lTurbo&c&lMine &fna 60 Sekund!"
+				if player have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 28 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 28 Sponge named "&d&lExtra Waluta":
+							remove 28 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 60 seconds
+							broadcast "&a[VIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 60 Sekund!"
+				if player have permissions "tm.svip":
+					if player don't have 27 Sponge named "&d&lExtra Waluta":
+						send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+					if player have 27 Sponge named "&d&lExtra Waluta":
+						remove 27 Sponge named "&d&lExtra Waluta" from the player
+						apply haste to player for 60 seconds
+						broadcast "&a[SVIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 60 Sekund!"		
+		if arg 1 is "kup":
+			if arg 2 is "5":
+				if player don't have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 37 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 37 Sponge named "&d&lExtra Waluta":
+							remove 37 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 75 seconds
+							broadcast "&a%player% &fZakupil &6&lTurbo&c&lMine &fna 75 Sekund!"
+				if player have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 36 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 36 Sponge named "&d&lExtra Waluta":
+							remove 36 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 75 seconds
+							broadcast "&a[VIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 75 Sekund!"
+				if player have permissions "tm.svip":
+					if player don't have 35 Sponge named "&d&lExtra Waluta":
+						send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+					if player have 35 Sponge named "&d&lExtra Waluta":
+						remove 35 Sponge named "&d&lExtra Waluta" from the player
+						apply haste to player for 75 seconds
+						broadcast "&a[SVIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 75 Sekund!"
+		if arg 1 is "kup":
+			if arg 2 is "6":
+				if player don't have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 45 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 45 Sponge named "&d&lExtra Waluta":
+							remove 45 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 90 seconds
+							broadcast "&a%player% &fZakupil &6&lTurbo&c&lMine &fna 90 Sekund!"
+				if player have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 44 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 44 Sponge named "&d&lExtra Waluta":
+							remove 44 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 90 seconds
+							broadcast "&a[VIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 90 Sekund!"
+				if player have permissions "tm.svip":
+					if player don't have 43 Sponge named "&d&lExtra Waluta":
+						send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+					if player have 43 Sponge named "&d&lExtra Waluta":
+						remove 43 Sponge named "&d&lExtra Waluta" from the player
+						apply haste to player for 90 seconds
+						broadcast "&a[SVIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 90 Sekund!"
+		if arg 1 is "kup":
+			if arg 2 is "7":
+				if player don't have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 53 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 53 Sponge named "&d&lExtra Waluta":
+							remove 53 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 105 seconds
+							broadcast "&a%player% &fZakupil &6&lTurbo&c&lMine &fna 105 Sekund!"
+				if player have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 52 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 52 Sponge named "&d&lExtra Waluta":
+							remove 52 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 105 seconds
+							broadcast "&a[VIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 105 Sekund!"
+				if player have permissions "tm.svip":
+					if player don't have 51 Sponge named "&d&lExtra Waluta":
+						send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+					if player have 51 Sponge named "&d&lExtra Waluta":
+						remove 51 Sponge named "&d&lExtra Waluta" from the player
+						apply haste to player for 105 seconds
+						broadcast "&a[SVIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 105 Sekund!"
+		if arg 1 is "kup":
+			if arg 2 is "8":
+				if player don't have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 59 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 59 Sponge named "&d&lExtra Waluta":
+							remove 59 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 120 seconds
+							broadcast "&a%player% &fZakupil &6&lTurbo&c&lMine &fna 120 Sekund!"
+				if player have permissions "tm.vip":
+					if player don't have permissions "tm.svip":
+						if player don't have 58 Sponge named "&d&lExtra Waluta":
+							send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+						if player have 58 Sponge named "&d&lExtra Waluta":
+							remove 58 Sponge named "&d&lExtra Waluta" from the player
+							apply haste to player for 120 seconds
+							broadcast "&a[VIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 120 Sekund!"
+				if player have permissions "tm.svip":
+					if player don't have 57 Sponge named "&d&lExtra Waluta":
+						send "Nie masz wystarczajacej ilosci &d&lExtra Waluty" to the player
+					if player have 57 Sponge named "&d&lExtra Waluta":
+						remove 57 Sponge named "&d&lExtra Waluta" from the player
+						apply haste to player for 120 seconds
+						broadcast "&a[SVIP]%player% &fZakupil &6&lTurbo&c&lMine &fna 120 Sekund!"
+		if arg 1 is "sponsor":
+			if arg 2 is not set:
+				if player have permissions "tm.admin":
+					loop all players:
+						apply haste to player for 60 seconds
+					broadcast "&a%player% &fKupil dla wszystkich graczy &6&lTurbo&c&lMine &fna 1Minute!"
+		if arg 1 is "wykorzystaj":
+			if arg 2 is "1":
+				if player don't have 1 Gray Dye of protection 1 named "&f&lZeton na &6&lTurbo&c&lMine":
+					send "Nie masz zetonu na &6Turbo&cMine" to the player
+				if player have 1 Gray Dye of protection 1 named "&f&lZeton na &6&lTurbo&c&lMine":
+					remove 1 Gray Dye of protection 1 named "&f&lZeton na &6&lTurbo&c&lMine" from the player
+					apply haste to player for 120 seconds
+					send "Wykorzystales zeton na &6&lTurbo&c&lMine"
+					broadcast "&a%player% &fWykorzystal zeton &6&lTurbo&c&lMine &fna 120 Sekund!"
+		if arg 1 is "wykorzystaj":
+			if arg 2 is "2":
+				if player don't have 1 Blue Dye of protection 1 named "&f&l2Zeton na &6&lTurbo&c&lMine":
+					send "Nie masz 2zetonu na &6Turbo&cMine" to the player
+				if player have 1 Blue Dye of protection 1 named "&f&l2Zeton na &6&lTurbo&c&lMine":
+					remove 1 Blue Dye of protection 1 named "&f&l2Zeton na &6&lTurbo&c&lMine" from the player
+					apply haste to player for 180 seconds
+					send "Wykorzystales 2zeton na &6&lTurbo&c&lMine"
+					broadcast "&a%player% &fWykorzystal 2zeton &6&lTurbo&c&lMine &fna 180 Sekund!"
+		if arg 1 is "wykorzystaj":
+			if arg 2 is "3":
+				if player don't have 1 Red Dye of protection 1 named "&f&l3Zeton na &6&lTurbo&c&lMine":
+					send "Nie masz zetonu na &6Turbo&cMine" to the player
+				if player have 1 Red Dye of protection 1 named "&f&l3Zeton na &6&lTurbo&c&lMine":
+					remove 1 Red Dye of protection 1 named "&f&l3Zeton na &6&lTurbo&c&lMine" from the player
+					apply haste to player for 240 seconds
+					send "Wykorzystales 3zeton na &6&lTurbo&c&lMine"
+					broadcast "&a%player% &fWykorzystal 3zeton &6&lTurbo&c&lMine &fna 240 Sekund!"
+		if arg 1 is "event":
+			if arg 2 is "1":
+				if player have permissions "tm.admin":
+					add Gray Dye of protection 1 named "&f&lZeton na &6&lTurbo&c&lMine" to player's inventory
+		if arg 1 is "event":
+			if arg 2 is "2":
+				if player have permissions "tm.admin":
+					add Blue Dye of protection 1 named "&f&l2Zeton na &6&lTurbo&c&lMine" to player's inventory
+		if arg 1 is "event":
+			if arg 2 is "3":
+				if player have permissions "tm.admin":
+					add Red Dye of protection 1 named "&f&l3Zeton na &6&lTurbo&c&lMine" to player's inventory
